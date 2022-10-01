@@ -334,6 +334,7 @@ video {
   background: transparent;
   
 }
+
 .button3:hover{
   text-decoration: underline;
 }
@@ -916,3 +917,4 @@ body{
     background: linear-gradient(180deg, #b97bafb6 14.2%, white 14.2%);
     background-repeat: no-repeat;
   }
+
