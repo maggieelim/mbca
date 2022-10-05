@@ -329,15 +329,13 @@ video {
   position: relative;
   overflow: hidden;
 }
-.button3{
+.button3 {
   border: 0px transparent;
   background: transparent;
-  
+  font-weight: 400;
 }
 
-.button3:hover{
-  text-decoration: underline;
-}
+
 .container th{
   padding-top: 25px;
   padding-right: 35px
@@ -388,7 +386,7 @@ video {
   border: 0px solid #f20091;
   background: #f20091; 
   color: white;
-  cursor: pointer;
+  cursor: text;
   position: relative;
   overflow: hidden;
   right: 10px;
@@ -403,11 +401,11 @@ video {
   border: 0px solid #f20091;
   background: #f20091; 
   color: white;
-  cursor: pointer;
+  cursor: text;
   position: relative;
   overflow: hidden;
 
-  left: 10px;
+  left: 200px;
 }
 
 .closing{
@@ -458,7 +456,6 @@ video {
   color:#737373;
 }
 .site-footer h4{
-  cursor:pointer;
   font-family: "Brush Script MT";
 }
 .site-footer hr
@@ -499,9 +496,7 @@ video {
   display:block
 }
 
-.footer-links li:hover{
-  text-decoration: underline;  
-}
+
 .footer-links a
 {
   color: white;
