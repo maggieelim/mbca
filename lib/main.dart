@@ -3,6 +3,7 @@ import 'package:flutter_application_1/data/database.dart';
 import 'package:flutter_application_1/transfer_page/input_password.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+//testtt
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox('mybox');
