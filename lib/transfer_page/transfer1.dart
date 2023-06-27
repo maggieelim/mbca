@@ -48,62 +48,65 @@ class _Transfer1State extends State<Transfer1> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
-          children: [
-            TextButton(
-              child: const Text(
-                'Back',
-                style: TextStyle(color: Colors.blue, fontSize: 17),
+        title: Padding(
+          padding: const EdgeInsets.only(top:15.0),
+          child: Row(
+            children: [
+              TextButton(
+                child: const Text(
+                  'Back',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return MTransferPage(
+                          userName: widget.userName,
+                        );
+                      }),
+                    ),
+                  );
+                },
               ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: ((context) {
-                      return MTransferPage(
-                        userName: widget.userName,
-                      );
-                    }),
-                  ),
-                );
-              },
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 70),
-            ),
-            const Text(
-              ' m-Transfer',
-              style: TextStyle(
-                fontSize: 20,
-                color: Color.fromARGB(255, 12, 85, 146),
-                fontFamily: 'Arial',
+              const Padding(
+                padding: EdgeInsets.only(left: 70),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 55),
-            ),
-            const Icon(
-              Icons.square_rounded,
-              color: Colors.green,
-              size: 20,
-            ),
-            TextButton(
-              child: const Text(
-                'Send',
-                style: TextStyle(color: Colors.blue, fontSize: 17),
+              const Text(
+                ' m-Transfer',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 12, 85, 146),
+                  fontFamily: 'Arial',
+                ),
               ),
-              onPressed: () {
-                showTransferConfirmation(
-                    context,
-                    widget.userName,
-                    enteredJumlah,
-                    widget.nama,
-                    widget.noRek,
-                    db.users[0][2],
-                    db.users[0][4],
-                    enteredBerita);
-              },
-            ),
-          ],
+              const Padding(
+                padding: EdgeInsets.only(left: 55),
+              ),
+              const Icon(
+                Icons.square_rounded,
+                color: Colors.green,
+                size: 20,
+              ),
+              TextButton(
+                child: const Text(
+                  'Send',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+                onPressed: () {
+                  showTransferConfirmation(
+                      context,
+                      widget.userName,
+                      enteredJumlah,
+                      widget.nama,
+                      widget.noRek,
+                      db.users[0][2],
+                      db.users[0][4],
+                      enteredBerita);
+                },
+              ),
+            ],
+          ),
         ),
         automaticallyImplyLeading: false,
       ),

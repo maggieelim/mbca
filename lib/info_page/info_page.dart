@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data/database.dart';
 import 'package:flutter_application_1/home_page.dart';
+import 'package:flutter_application_1/info_page/mutasi.dart';
 import 'package:flutter_application_1/info_page/saldo.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -31,6 +32,7 @@ class _InfoPageState extends State<InfoPage> {
     }
     super.initState();
   }
+
 
   final _myBox = Hive.box('mybox');
   UserDataBase db = UserDataBase();
@@ -138,7 +140,16 @@ class _InfoPageState extends State<InfoPage> {
                     showSaldo(context, db.users[0][2], widget.saldo);
                   },
                 ),
-                _buildListItem('Mutasi Rekening', () {}),
+                _buildListItem('Mutasi Rekening', () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return Mutasi(
+                            saldo: widget.saldo, jumlah: widget.jumlah);
+                      }),
+                    ),
+                  );
+                }),
                 _buildListItem('Rekening Deposito', () {}),
                 _buildListItem('Info Reward BCA', () {}),
                 _judul('Info Reksadana'),

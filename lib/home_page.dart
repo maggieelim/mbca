@@ -16,7 +16,7 @@ class MainHomePage extends StatefulWidget {
 
 class _MainHomePageState extends State<MainHomePage> {
   @override
-  void initState() {
+    void initState() {
     // db.createInitialData();
     if (_myBox.get("USERS") == null) {
       db.createInitialData();
@@ -25,6 +25,7 @@ class _MainHomePageState extends State<MainHomePage> {
     }
     super.initState();
   }
+
 
   void updateBalance(int amount) {
     setState(() {
@@ -42,7 +43,7 @@ class _MainHomePageState extends State<MainHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Padding(
-          padding: const EdgeInsets.only(top: 15.0, bottom: 5),
+          padding: const EdgeInsets.only(top: 15.0),
           child: Row(
             children: [
               Container(

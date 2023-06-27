@@ -88,45 +88,48 @@ class _DaftarRekeningState extends State<DaftarRekening> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
-          children: [
-            TextButton(
-              child: const Text(
-                'Back',
-                style: TextStyle(color: Colors.blue, fontSize: 17),
+        title: Padding(
+          padding: const EdgeInsets.only(top:15.0),
+          child: Row(
+            children: [
+              TextButton(
+                child: const Text(
+                  'Back',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return Transfer(
+                          userName: widget.userName,
+                        );
+                      }),
+                    ),
+                  );
+                },
               ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: ((context) {
-                      return Transfer(
-                        userName: widget.userName,
-                      );
-                    }),
-                  ),
-                );
-              },
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 70),
-            ),
-            const Text(
-              'Transfer List',
-              style: TextStyle(
-                fontSize: 20,
-                color: Color.fromARGB(255, 12, 85, 146),
-                fontFamily: 'Arial',
+              const Padding(
+                padding: EdgeInsets.only(left: 70),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 95),
-            ),
-            const Icon(
-              Icons.square_rounded,
-              color: Colors.green,
-              size: 20,
-            ),
-          ],
+              const Text(
+                'Transfer List',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 12, 85, 146),
+                  fontFamily: 'Arial',
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 95),
+              ),
+              const Icon(
+                Icons.square_rounded,
+                color: Colors.green,
+                size: 20,
+              ),
+            ],
+          ),
         ),
         automaticallyImplyLeading: false,
       ),

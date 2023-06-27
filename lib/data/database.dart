@@ -2,6 +2,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class UserDataBase {
   List<List<dynamic>> users = [];
+  List<List<dynamic>> mutasi = [];
 
   final _myBox = Hive.box('mybox');
 
@@ -13,14 +14,17 @@ class UserDataBase {
       ['AURELIA', '223344556'],
       ['LEVINA OLIVIA', '334455667'],
     ];
+    mutasi = []; // Initialize the mutasi list
   }
 
   void loadData() {
     users = _myBox.get("USERS");
+    mutasi = _myBox.get("MUTASI");
   }
 
   void updateDataBase() {
     _myBox.put("USERS", users);
+    _myBox.put("MUTASI", mutasi);
   }
 
   void updateBalance(int amount) {
@@ -28,6 +32,8 @@ class UserDataBase {
     final currentBalance = currentUser[1];
     final newBalance = currentBalance - amount;
     currentUser[1] = newBalance;
+
+    mutasi.add([amount, currentUser[0]]);
     updateDataBase();
   }
 }

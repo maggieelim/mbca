@@ -34,77 +34,80 @@ class _TransferState extends State<Transfer> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Row(
-          children: [
-            TextButton(
-              child: const Text(
-                'Back',
-                style: TextStyle(color: Colors.blue, fontSize: 17),
+        title: Padding(
+          padding: const EdgeInsets.only(top:15.0),
+          child: Row(
+            children: [
+              TextButton(
+                child: const Text(
+                  'Back',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: ((context) {
+                        return MTransferPage(
+                          userName: widget.userName,
+                        );
+                      }),
+                    ),
+                  );
+                },
               ),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: ((context) {
-                      return MTransferPage(
-                        userName: widget.userName,
+              const Padding(
+                padding: EdgeInsets.only(left: 70),
+              ),
+              const Text(
+                ' m-Transfer',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 12, 85, 146),
+                  fontFamily: 'Arial',
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 55),
+              ),
+              const Icon(
+                Icons.square_rounded,
+                color: Colors.green,
+                size: 20,
+              ),
+              TextButton(
+                child: const Text(
+                  'Send',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      Timer(const Duration(seconds: 1), () {
+                        Navigator.of(context).pop();
+                      });
+                      return const AlertDialog(
+                        backgroundColor: Color.fromARGB(116, 203, 202, 212),
+                        contentPadding: EdgeInsets.all(10),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                        ),
+                        title: Text(
+                          "Isi Terlebih Dahulu",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       );
-                    }),
-                  ),
-                );
-              },
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 70),
-            ),
-            const Text(
-              ' m-Transfer',
-              style: TextStyle(
-                fontSize: 20,
-                color: Color.fromARGB(255, 12, 85, 146),
-                fontFamily: 'Arial',
+                    },
+                  );
+                },
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 55),
-            ),
-            const Icon(
-              Icons.square_rounded,
-              color: Colors.green,
-              size: 20,
-            ),
-            TextButton(
-              child: const Text(
-                'Send',
-                style: TextStyle(color: Colors.blue, fontSize: 17),
-              ),
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    Timer(const Duration(seconds: 1), () {
-                      Navigator.of(context).pop();
-                    });
-                    return const AlertDialog(
-                      backgroundColor: Color.fromARGB(116, 203, 202, 212),
-                      contentPadding: EdgeInsets.all(10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(8),
-                        ),
-                      ),
-                      title: Text(
-                        "Isi Terlebih Dahulu",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
-          ],
+            ],
+          ),
         ),
         automaticallyImplyLeading: false,
       ),
