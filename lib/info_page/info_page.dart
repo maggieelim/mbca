@@ -33,7 +33,6 @@ class _InfoPageState extends State<InfoPage> {
     super.initState();
   }
 
-
   final _myBox = Hive.box('mybox');
   UserDataBase db = UserDataBase();
   int currentPage = 0;

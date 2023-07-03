@@ -89,7 +89,7 @@ class _DaftarRekeningState extends State<DaftarRekening> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Padding(
-          padding: const EdgeInsets.only(top:15.0),
+          padding: const EdgeInsets.only(top: 15.0),
           child: Row(
             children: [
               TextButton(

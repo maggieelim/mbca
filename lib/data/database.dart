@@ -24,7 +24,6 @@ class UserDataBase {
 
   void updateDataBase() {
     _myBox.put("USERS", users);
-    _myBox.put("MUTASI", mutasi);
   }
 
   void updateBalance(int amount) {
@@ -33,7 +32,6 @@ class UserDataBase {
     final newBalance = currentBalance - amount;
     currentUser[1] = newBalance;
 
-    mutasi.add([amount, currentUser[0]]);
     updateDataBase();
   }
 }
